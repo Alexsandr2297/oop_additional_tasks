@@ -21,17 +21,22 @@
 """
 
 
-class ...:
+class Album:
+    """Класс для альбома артистов"""
+    artist: str
+    title: str
+    tracks: list
 
-    def ...:
-    ...
+    def __init__(self, artist, title, tracks):
+        """Метод для инициализации экземпляра класса. Задаем значения атрибутам экземпляра."""
+        self.artist = artist
+        self.title = title
+        self.tracks = tracks.split(", ")
 
 
-album_1 = Album(...)
+album_1 = Album('Queen', 'Killer Queen', 'Brighton rock, Killer Queen, Tenement Funster')
 
-album_2 = ...
+album_2 = Album('Metallica', 'Black Album', 'Enter Sandman, Sad But True, Holier Than Thou')
 
-
-# код для проверки 
 print(album_1.artist, album_1.title, len(album_1.tracks), "треков")  # Queen Killer Queen 3 треков
 print(album_2.artist, album_2.title, len(album_2.tracks), "треков")  # Metallica Black Album 3 треков

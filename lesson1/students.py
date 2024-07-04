@@ -11,16 +11,20 @@
 """
 
 
-class ...:
+class Student:
+    """Класс для студентов"""
+    name: str
+    course: int
 
-    def __init__(...):
-        ...
+    def __init__(self, name, course):
+        """Метод для инициализации экземпляра класса. Задаем значения атрибутам экземпляра."""
+        self.name = name
+        self.course = course
 
 
-student_1 = ...
-student_2 = ...
+student_1 = Student('Алиса', 3)
+student_2 = Student('Маргарита', 2)
 
-
-# код для проверки 
+# код для проверки
 print(student_1.name, student_1.course)  # Алиса 3
 print(student_2.name, student_2.course)  # Маргарита 2
