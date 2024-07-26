@@ -4,17 +4,40 @@
 - __init__(self, width, height): конструктор, принимающий ширину и высоту прямоугольника
 - area(self): метод, возвращающий площадь прямоугольника
 - perimeter(self): метод, возвращающий периметр прямоугольника
-- from_diagonal(cls, diagonal, aspect_ratio): класс-метод, принимающий диагональ прямоугольника и соотношение сторон и возвращающий объект класса Rectangle
+- from_diagonal(cls, diagonal, aspect_ratio): класс-метод, принимающий диагональ прямоугольника и соотношение сторон и
+возвращающий объект класса Rectangle
 - is_square(width, height): статический метод, принимающий ширину и высоту прямоугольника и возвращающий True,
 если это квадрат, и False в противном случае
 """
 
 
 class Rectangle:
-    pass
+    width: float
+    height: float
+
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return round(self.height * self.width)
+
+    def perimeter(self):
+        return round(self.height + self.width) * 2
+
+    @classmethod
+    def from_diagonal(cls, diagonal, aspect_ratio):
+        cls.diagonal = aspect_ratio
+        return cls(diagonal, aspect_ratio)
+
+    @staticmethod
+    def is_square(width, height):
+        if width == height:
+            return True
+        return False
 
 
-# код для проверки 
+# код для проверки
 rectangle = Rectangle(4, 5)
 print(rectangle.area())  # 20
 print(rectangle.perimeter())  # 18
