@@ -10,10 +10,22 @@
 
 
 class Fraction:
-    pass
+    def __init__(self, numerator, denominator):
+        self.numerator = numerator
+        self.denominator = denominator
+
+    def __repr__(self):
+        return f"{self.__class__.__name__} ({self.numerator}, {self.denominator})"
+
+    def __str__(self):
+        return f"{self.numerator}/{self.denominator}"
+
+    def __add__(self, other):
+        return f"{self.numerator+other.denominator}/{other.denominator}"
+
+    # код для проверки
 
 
-# код для проверки 
 fraction1 = Fraction(1, 2)
 print(repr(fraction1))  # Fraction(1, 2)
 print(str(fraction1))  # 1/2
