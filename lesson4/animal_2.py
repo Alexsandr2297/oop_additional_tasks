@@ -6,7 +6,7 @@
 class Animal:
 
     def __init__(self, name):
-        pass
+        self.name = name
 
     def walk(self):
         pass
@@ -24,9 +24,10 @@ class Cat(Animal):
         print('Meow!')
 
 
-
 animals = [Dog('Dog1'), Dog('Dog2'), Cat('Cat1'), Dog('Dog3')]
-
-for animal in animals:
-    # Должно выводиться Bark или Meow в зависимости от того какой класс
-    pass
+# Должно выводиться Bark или Meow в зависимости от того какой класс
+for i in animals:
+    if issubclass(i.__class__, Dog):
+        i.bark()
+    else:
+        i.meow()

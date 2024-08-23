@@ -10,11 +10,23 @@ class Employee:
     def __init__(self, pay):
         self.pay = pay
 
+    def __add__(self, other):
+        if isinstance(other, int):
+            return self.pay + other
+        if isinstance(other, self.__class__):
+            return self.pay + other.pay
+        return self.pay
+
 
 class Client:
 
     def __init__(self, pay):
         self.pay = pay
+
+    def __add__(self, other):
+        if isinstance(other, self.__class__):
+            return self.pay + other.pay
+        return other
 
 
 class Developer(Employee):
@@ -23,6 +35,7 @@ class Developer(Employee):
 
 class Manager(Employee):
     pass
+
 
 # код для проверки
 users = [Employee(50000), Client(100000), Developer(50000), Manager(50000)]
