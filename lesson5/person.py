@@ -18,7 +18,33 @@
 
 
 class Person:
-    pass
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def get_name(self):
+        return self.name
+
+    def get_age(self):
+        return self.age
+
+
+class Employee2(Person):
+    def __init__(self, name, age, salary):
+        super().__init__(name, age)
+        self.salary = salary
+
+    def get_salary(self):
+        return self.salary
+
+
+class Manager2(Employee2):
+    def __init__(self, name, age, salary, bonus):
+        super().__init__(name, age, salary)
+        self.bonus = bonus
+
+    def get_bonus(self):
+        return self.bonus
 
 
 # код для проверки 
@@ -36,3 +62,4 @@ print(manager.get_name())  # Bob
 print(manager.get_age())  # 40
 print(manager.get_salary())  # 10000
 print(manager.get_bonus())  # 5000
+
