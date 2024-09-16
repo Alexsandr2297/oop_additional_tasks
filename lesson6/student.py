@@ -12,13 +12,20 @@
 
 class Student:
 
-    def __init__(...):
-        ...
+    def __init__(self, name, course, evaluations):
+        self.name = name
+        self.course = course
+        self.evaluations = evaluations
+
+    def avg_rate(self):
+        if not self.evaluations:
+            return 0.0
+        return sum(self.evaluations) / len(self.evaluations)
 
 
 # код для проверки
 student = Student('Ivan', 'Python', [5, 4, 5, 5])
-student.avg_rate() # 4.75
+print(student.avg_rate())  # 4.75
 
 student = Student('Ivan', 'Python', [])
-student.avg_rate() # 0.0
+print(student.avg_rate())  # 0.0
